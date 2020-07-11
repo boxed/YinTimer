@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE50271D24BA502D0004F11A /* YinTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50271C24BA502D0004F11A /* YinTimerApp.swift */; };
+		AE50271F24BA502D0004F11A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50271E24BA502D0004F11A /* ContentView.swift */; };
+		AE50272124BA50300004F11A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE50272024BA50300004F11A /* Assets.xcassets */; };
+		AE50272424BA50300004F11A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE50272324BA50300004F11A /* Preview Assets.xcassets */; };
+		AE50272F24BA50310004F11A /* YinTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50272E24BA50310004F11A /* YinTimerTests.swift */; };
+		AE50273A24BA50310004F11A /* YinTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50273924BA50310004F11A /* YinTimerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE50272B24BA50310004F11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE50271124BA502D0004F11A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE50271824BA502D0004F11A;
+			remoteInfo = YinTimer;
+		};
+		AE50273624BA50310004F11A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE50271124BA502D0004F11A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE50271824BA502D0004F11A;
+			remoteInfo = YinTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AE50271924BA502D0004F11A /* YinTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YinTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE50271C24BA502D0004F11A /* YinTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinTimerApp.swift; sourceTree = "<group>"; };
+		AE50271E24BA502D0004F11A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AE50272024BA50300004F11A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE50272324BA50300004F11A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AE50272524BA50300004F11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE50272A24BA50310004F11A /* YinTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE50272E24BA50310004F11A /* YinTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinTimerTests.swift; sourceTree = "<group>"; };
+		AE50273024BA50310004F11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE50273524BA50310004F11A /* YinTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE50273924BA50310004F11A /* YinTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinTimerUITests.swift; sourceTree = "<group>"; };
+		AE50273B24BA50310004F11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE50271624BA502D0004F11A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE50272724BA50310004F11A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE50273224BA50310004F11A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE50271024BA502D0004F11A = {
+			isa = PBXGroup;
+			children = (
+				AE50271B24BA502D0004F11A /* YinTimer */,
+				AE50272D24BA50310004F11A /* YinTimerTests */,
+				AE50273824BA50310004F11A /* YinTimerUITests */,
+				AE50271A24BA502D0004F11A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE50271A24BA502D0004F11A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE50271924BA502D0004F11A /* YinTimer.app */,
+				AE50272A24BA50310004F11A /* YinTimerTests.xctest */,
+				AE50273524BA50310004F11A /* YinTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE50271B24BA502D0004F11A /* YinTimer */ = {
+			isa = PBXGroup;
+			children = (
+				AE50271C24BA502D0004F11A /* YinTimerApp.swift */,
+				AE50271E24BA502D0004F11A /* ContentView.swift */,
+				AE50272024BA50300004F11A /* Assets.xcassets */,
+				AE50272524BA50300004F11A /* Info.plist */,
+				AE50272224BA50300004F11A /* Preview Content */,
+			);
+			path = YinTimer;
+			sourceTree = "<group>";
+		};
+		AE50272224BA50300004F11A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AE50272324BA50300004F11A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AE50272D24BA50310004F11A /* YinTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AE50272E24BA50310004F11A /* YinTimerTests.swift */,
+				AE50273024BA50310004F11A /* Info.plist */,
+			);
+			path = YinTimerTests;
+			sourceTree = "<group>";
+		};
+		AE50273824BA50310004F11A /* YinTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AE50273924BA50310004F11A /* YinTimerUITests.swift */,
+				AE50273B24BA50310004F11A /* Info.plist */,
+			);
+			path = YinTimerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE50271824BA502D0004F11A /* YinTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE50273E24BA50310004F11A /* Build configuration list for PBXNativeTarget "YinTimer" */;
+			buildPhases = (
+				AE50271524BA502D0004F11A /* Sources */,
+				AE50271624BA502D0004F11A /* Frameworks */,
+				AE50271724BA502D0004F11A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YinTimer;
+			productName = YinTimer;
+			productReference = AE50271924BA502D0004F11A /* YinTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE50272924BA50310004F11A /* YinTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE50274124BA50310004F11A /* Build configuration list for PBXNativeTarget "YinTimerTests" */;
+			buildPhases = (
+				AE50272624BA50310004F11A /* Sources */,
+				AE50272724BA50310004F11A /* Frameworks */,
+				AE50272824BA50310004F11A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE50272C24BA50310004F11A /* PBXTargetDependency */,
+			);
+			name = YinTimerTests;
+			productName = YinTimerTests;
+			productReference = AE50272A24BA50310004F11A /* YinTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AE50273424BA50310004F11A /* YinTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE50274424BA50310004F11A /* Build configuration list for PBXNativeTarget "YinTimerUITests" */;
+			buildPhases = (
+				AE50273124BA50310004F11A /* Sources */,
+				AE50273224BA50310004F11A /* Frameworks */,
+				AE50273324BA50310004F11A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE50273724BA50310004F11A /* PBXTargetDependency */,
+			);
+			name = YinTimerUITests;
+			productName = YinTimerUITests;
+			productReference = AE50273524BA50310004F11A /* YinTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE50271124BA502D0004F11A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					AE50271824BA502D0004F11A = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					AE50272924BA50310004F11A = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = AE50271824BA502D0004F11A;
+					};
+					AE50273424BA50310004F11A = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = AE50271824BA502D0004F11A;
+					};
+				};
+			};
+			buildConfigurationList = AE50271424BA502D0004F11A /* Build configuration list for PBXProject "YinTimer" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AE50271024BA502D0004F11A;
+			productRefGroup = AE50271A24BA502D0004F11A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE50271824BA502D0004F11A /* YinTimer */,
+				AE50272924BA50310004F11A /* YinTimerTests */,
+				AE50273424BA50310004F11A /* YinTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE50271724BA502D0004F11A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE50272424BA50300004F11A /* Preview Assets.xcassets in Resources */,
+				AE50272124BA50300004F11A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE50272824BA50310004F11A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE50273324BA50310004F11A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE50271524BA502D0004F11A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE50271F24BA502D0004F11A /* ContentView.swift in Sources */,
+				AE50271D24BA502D0004F11A /* YinTimerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE50272624BA50310004F11A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE50272F24BA50310004F11A /* YinTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE50273124BA50310004F11A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE50273A24BA50310004F11A /* YinTimerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE50272C24BA50310004F11A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE50271824BA502D0004F11A /* YinTimer */;
+			targetProxy = AE50272B24BA50310004F11A /* PBXContainerItemProxy */;
+		};
+		AE50273724BA50310004F11A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE50271824BA502D0004F11A /* YinTimer */;
+			targetProxy = AE50273624BA50310004F11A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AE50273C24BA50310004F11A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AE50273D24BA50310004F11A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE50273F24BA50310004F11A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"YinTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = B6FVY827P9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = YinTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AE50274024BA50310004F11A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"YinTimer/Preview Content\"";
+				DEVELOPMENT_TEAM = B6FVY827P9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = YinTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AE50274224BA50310004F11A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6FVY827P9;
+				INFOPLIST_FILE = YinTimerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YinTimer.app/YinTimer";
+			};
+			name = Debug;
+		};
+		AE50274324BA50310004F11A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6FVY827P9;
+				INFOPLIST_FILE = YinTimerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YinTimer.app/YinTimer";
+			};
+			name = Release;
+		};
+		AE50274524BA50310004F11A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6FVY827P9;
+				INFOPLIST_FILE = YinTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YinTimer;
+			};
+			name = Debug;
+		};
+		AE50274624BA50310004F11A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B6FVY827P9;
+				INFOPLIST_FILE = YinTimerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YinTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE50271424BA502D0004F11A /* Build configuration list for PBXProject "YinTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE50273C24BA50310004F11A /* Debug */,
+				AE50273D24BA50310004F11A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE50273E24BA50310004F11A /* Build configuration list for PBXNativeTarget "YinTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE50273F24BA50310004F11A /* Debug */,
+				AE50274024BA50310004F11A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE50274124BA50310004F11A /* Build configuration list for PBXNativeTarget "YinTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE50274224BA50310004F11A /* Debug */,
+				AE50274324BA50310004F11A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE50274424BA50310004F11A /* Build configuration list for PBXNativeTarget "YinTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE50274524BA50310004F11A /* Debug */,
+				AE50274624BA50310004F11A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE50271124BA502D0004F11A /* Project object */;
+}
