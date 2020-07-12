@@ -13,9 +13,11 @@ let presets = [
     6,
 ]
 
+let epoch = (Date.init(timeIntervalSince1970: 0), Date.init(timeIntervalSince1970: 0))
+
 
 struct ContentView: View {
-    @State var times: (Date, Date) = (Date.init(timeIntervalSince1970: 0), Date.init(timeIntervalSince1970: 0))
+    @State var times: (Date, Date) = epoch
     
     @State var now: Date = Date()
     
@@ -60,6 +62,7 @@ struct ContentView: View {
                         times = (
                             Date.init(),
                             Date.init(timeIntervalSinceNow: TimeInterval(60 * presets[i])))
+                        UIApplication.shared.isIdleTimerDisabled = true
                     }) {
                         Text("\(presets[i])")
                         .font(.system(size: 20))
@@ -67,7 +70,7 @@ struct ContentView: View {
                     }.padding()
                 }
                 Button(action: {
-                    times = (Date.init(timeIntervalSince1970: 0), Date.init(timeIntervalSince1970: 0))
+                    times = epoch
                 })  {
                     Text("Stop")
                     .font(.system(size: 20))
