@@ -45,6 +45,7 @@
 		AE50273524BA50310004F11A /* YinTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE50273924BA50310004F11A /* YinTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinTimerUITests.swift; sourceTree = "<group>"; };
 		AE50273B24BA50310004F11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEFC648B25693E32000C003F /* YinTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YinTimer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 		AE50271B24BA502D0004F11A /* YinTimer */ = {
 			isa = PBXGroup;
 			children = (
+				AEFC648B25693E32000C003F /* YinTimer.entitlements */,
 				AE50271C24BA502D0004F11A /* YinTimerApp.swift */,
 				AE50271E24BA502D0004F11A /* ContentView.swift */,
 				AE50272024BA50300004F11A /* Assets.xcassets */,
@@ -417,7 +419,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YinTimer/YinTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"YinTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = B6FVY827P9;
 				ENABLE_PREVIEWS = YES;
@@ -427,10 +431,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -439,7 +444,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YinTimer/YinTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"YinTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = B6FVY827P9;
 				ENABLE_PREVIEWS = YES;
@@ -449,10 +456,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
