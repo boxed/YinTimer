@@ -48,7 +48,7 @@ func readSongs() -> [Song] {
             The numbers in the front are for making the songs appear in the order you want in YinTimer. Then you should have a space, followed by a symbol that is shown on the button. This can be any text you want. Anything after that is ignored.
             """.data(using: .utf8), attributes: nil)
         }
-        return try fm.contentsOfDirectory(at: driveURL, includingPropertiesForKeys: [.isDirectoryKey], options: .skipsHiddenFiles).map { url -> Song? in
+        return try fm.contentsOfDirectory(at: driveURL, includingPropertiesForKeys: [.isDirectoryKey], options: .skipsHiddenFiles).sorted(by: {a, b in a.path < b.path }).map { url -> Song? in
             let filename = url.lastPathComponent
             if !filename.hasSuffix(".mp3") {
                 return nil
