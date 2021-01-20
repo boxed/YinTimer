@@ -26,7 +26,30 @@ func savePresets(_ presets: [Int]) {
     UserDefaults.standard.setValue(presets, forKey: "presets")
 }
 
-func readSongs() -> [Song] {
+func readSongsFromDir(url : URL) -> [Song] {
+    do {
+        return try FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants]).sorted(by: {a, b in a.path < b.path }).map { url -> Song? in
+            if !url.isFileURL {
+                return nil
+            }
+            let filename = url.lastPathComponent
+            if !filename.hasSuffix(".mp3") && !filename.hasSuffix(".m4a") {
+                return nil
+            }
+            let parts = filename.split(separator: " ", maxSplits: 1)
+            if parts.count != 2 || parts[1].count < 1 {
+                return nil
+            }
+            guard let symbol = String(parts[1]).first else { return nil }
+            return Song(fileURL: url, symbol: String(symbol))
+        }.compactMap { $0 }
+    }
+    catch {
+        return []
+    }
+}
+
+func readSongs() -> [[Song]] {
     let fm = FileManager.default
     // TODO: do this in a queue! https://dev.to/nemecek_f/ios-saving-files-into-user-s-icloud-drive-using-filemanager-4kpm
     guard let driveURL = fm.url(forUbiquityContainerIdentifier: nil)?.appendingPathComponent("Documents") else { return []
@@ -40,26 +63,30 @@ func readSongs() -> [Song] {
             How to add songs to YinTimer
             ============================
 
-            Add .mp3 files in this folder. Follow this pattern:
+            Add .mp3 or .m4a files in this folder. Follow this pattern:
 
             01 ♫ anything you want.mp3
             02 🎸 anything you want.mp3
 
             The numbers in the front are for making the songs appear in the order you want in YinTimer. Then you should have a space, followed by a symbol that is shown on the button. This can be any text you want. Anything after that is ignored.
+
+            You can also add several rows of song buttons by creating directories with songs in them. The rules in these directories are the same as described above. The names of the directories can be anything but are sorted alphabetically and these lists come after the primary list of files directly in the YinTimer directory.
             """.data(using: .utf8), attributes: nil)
         }
-        return try fm.contentsOfDirectory(at: driveURL, includingPropertiesForKeys: [.isDirectoryKey], options: .skipsHiddenFiles).sorted(by: {a, b in a.path < b.path }).map { url -> Song? in
-            let filename = url.lastPathComponent
-            if !filename.hasSuffix(".mp3") {
+        
+        let subdirectory_songs = try FileManager.default.contentsOfDirectory(at: driveURL, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants]).sorted(by: {a, b in a.path < b.path }).map { url -> [Song]? in
+            if !url.hasDirectoryPath {
                 return nil
             }
-            let parts = filename.split(separator: " ", maxSplits: 1)
-            if parts.count != 2 || parts[1].count < 1 {
+
+            let songs = readSongsFromDir(url: url)
+            if songs.count == 0 {
                 return nil
             }
-            guard let symbol = String(parts[1]).first else { return nil }
-            return Song(fileURL: url, symbol: String(symbol))
+            return songs
         }.compactMap { $0 }
+        
+        return [readSongsFromDir(url: driveURL)] + subdirectory_songs
     }
     catch {
         return []
@@ -175,53 +202,57 @@ struct ContentView: View {
     }
   
     var songButtons: some View {
-        ScrollView(.horizontal) {
-            HStack {
-                ForEach(songs.indices, id: \.self) { i in
-                    Button(action: {
-                        // TODO: start/stop song
-                        do {
-                            if player != nil {
-                                player?.stop()
-                                player = nil
-                                if songs[i] == currentSong {
-                                    return
+        VStack {
+            ForEach(songs.indices, id: \.self) { row_index in
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(songs[row_index].indices, id: \.self) { i in
+                            Button(action: {
+                                // TODO: start/stop song
+                                do {
+                                    if player != nil {
+                                        player?.stop()
+                                        player = nil
+                                        if songs[row_index][i] == currentSong {
+                                            return
+                                        }
+                                    }
+                                    player = try AVAudioPlayer(contentsOf: songs[row_index][i].fileURL)
+                                    player?.prepareToPlay()
+                                    player?.numberOfLoops = -1
+                                    try AVAudioSession.sharedInstance().setCategory(.playback)
+                                    player?.play()
+                                    currentSong = songs[row_index][i]
                                 }
+                                catch {
+                                }
+                            }) {
+                                Text("\(songs[row_index][i].symbol)")
+                                .font(.system(size: 20))
+                                .foregroundColor(.white)
+                                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .background(
+                                    Circle()
+                                    .strokeBorder()
+                                    .foregroundColor(player != nil && songs[row_index][i] == currentSong ? .purple : .white  )
+                                )
+                                // TODO: progress information for player
+        //                        .background(
+        //                            Path { path in
+        //                                if player != nil && songs[i] == currentSong {
+        //                                    if let currentTime = player?.currentTime, let duration = player?.duration {
+        //                                        clockPathInner(path: &path, bounds: path.boundingRect, progress: currentTime/duration)
+        //                                    }
+        //                                }
+        //                            }
+        //                        )
                             }
-                            player = try AVAudioPlayer(contentsOf: songs[i].fileURL)
-                            player?.prepareToPlay()
-                            player?.numberOfLoops = -1
-                            try AVAudioSession.sharedInstance().setCategory(.playback)
-                            player?.play()
-                            currentSong = songs[i]
                         }
-                        catch {
-                        }
-                    }) {
-                        Text("\(songs[i].symbol)")
-                        .font(.system(size: 20))
-                        .foregroundColor(.white)
-                        .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .background(
-                            Circle()
-                            .strokeBorder()
-                            .foregroundColor(player != nil && songs[i] == currentSong ? .purple : .white  )
-                        )
-                        // TODO: progress information for player
-//                        .background(
-//                            Path { path in
-//                                if player != nil && songs[i] == currentSong {
-//                                    if let currentTime = player?.currentTime, let duration = player?.duration {
-//                                        clockPathInner(path: &path, bounds: path.boundingRect, progress: currentTime/duration)
-//                                    }
-//                                }
-//                            }
-//                        )
                     }
                 }
+                .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
             }
         }
-        .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
     }
     
     var body: some View {
