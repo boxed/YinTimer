@@ -129,6 +129,7 @@ struct ContentView: View {
     @State var songs = readSongs()
     @State var player: AVAudioPlayer? = nil
     @State var currentSong: Song? = nil
+    @State var activeButton: Int = -1
 
     let timer = Timer.publish(every: 0.05, on: .main, in: .common).autoconnect()
     
@@ -180,6 +181,7 @@ struct ContentView: View {
             HStack {
                 ForEach(presets.indices, id: \.self) { i in
                     Button(action: {
+                        activeButton = i
                         times = (
                             Date.init(),
                             Date.init(timeIntervalSinceNow: TimeInterval(60 * presets[i])))
@@ -187,11 +189,12 @@ struct ContentView: View {
                     }) {
                         Text("\(presets[i])")
                         .font(.system(size: 20))
-                        .foregroundColor(.white)
+                        .foregroundColor(activeButton == i ? .purple : .white)
                     }.padding()
                 }
                 Button(action: {
                     times = epoch
+                    activeButton = -1
                 })  {
                     Text("Stop")
                     .font(.system(size: 20))
