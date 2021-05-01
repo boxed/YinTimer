@@ -96,12 +96,7 @@ func readSongs() -> [[Song]] {
 func clockPathInner(path: inout Path, bounds: CGRect, progress: TimeInterval, extraSize: CGFloat = 1) {
     let pi = Double.pi
     let position: Double
-    if progress == 0 {
-        position = 0
-    }
-    else {
-        position = pi - (2*pi * progress)
-    }
+    position = pi - (2*pi * progress)
     let size = bounds.height / 2
     let offset: CGFloat = bounds.height * 0.070
     let x = bounds.midX + CGFloat(sin(position)) * size * extraSize
