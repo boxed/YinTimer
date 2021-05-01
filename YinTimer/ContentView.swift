@@ -93,13 +93,19 @@ func readSongs() -> [[Song]] {
     }
 }
 
-func clockPathInner(path: inout Path, bounds: CGRect, progress: TimeInterval) {
+func clockPathInner(path: inout Path, bounds: CGRect, progress: TimeInterval, extraSize: CGFloat = 1) {
     let pi = Double.pi
-    let position: Double = pi - (2*pi / progress)
-    let size = bounds.height
+    let position: Double
+    if progress == 0 {
+        position = 0
+    }
+    else {
+        position = pi - (2*pi * progress)
+    }
+    let size = bounds.height / 2
     let offset: CGFloat = bounds.height * 0.070
-    let x = bounds.midX + CGFloat(sin(position)) * size
-    let y = bounds.midY + CGFloat(cos(position)) * size
+    let x = bounds.midX + CGFloat(sin(position)) * size * extraSize
+    let y = bounds.midY + CGFloat(cos(position)) * size * extraSize
     path.move(
         to: CGPoint(
             x: bounds.midX,
@@ -107,16 +113,15 @@ func clockPathInner(path: inout Path, bounds: CGRect, progress: TimeInterval) {
         )
     )
     path.addLine(to: CGPoint(x: x, y: y - offset))
-
 }
 
 func clockPath(times: (Date, Date), now: Date, bounds: CGRect) -> Path {
     Path { path in
         let (start, stop) = times
         if now <= stop {
-            let length = stop.distance(to: start)
-            let progress = length / now.distance(to: stop)
-            clockPathInner(path: &path, bounds: bounds, progress: progress)
+            let length = start.distance(to: stop)
+            let progress = start.distance(to: now) / length
+            clockPathInner(path: &path, bounds: bounds, progress: progress, extraSize: 2)
         }
     }
 }
@@ -203,6 +208,8 @@ struct ContentView: View {
             }
         }
     }
+    
+    let songButtonSize: CGFloat = 50;
   
     var songButtons: some View {
         VStack {
@@ -233,22 +240,21 @@ struct ContentView: View {
                                 Text("\(songs[row_index][i].symbol)")
                                 .font(.system(size: 20))
                                 .foregroundColor(.white)
-                                .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .frame(width: songButtonSize, height: songButtonSize, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .background(
                                     Circle()
                                     .strokeBorder()
                                     .foregroundColor(player != nil && songs[row_index][i] == currentSong ? .purple : .white  )
                                 )
-                                // TODO: progress information for player
-        //                        .background(
-        //                            Path { path in
-        //                                if player != nil && songs[i] == currentSong {
-        //                                    if let currentTime = player?.currentTime, let duration = player?.duration {
-        //                                        clockPathInner(path: &path, bounds: path.boundingRect, progress: currentTime/duration)
-        //                                    }
-        //                                }
-        //                            }
-        //                        )
+                                .background(
+                                    Path { path in
+                                        if player != nil && songs[row_index][i] == currentSong {
+                                            if let currentTime = player?.currentTime, let duration = player?.duration {
+                                                clockPathInner(path: &path, bounds: CGRect(x: 4, y: 7, width: songButtonSize - 8, height: songButtonSize - 8), progress: currentTime/duration)
+                                            }
+                                        }
+                                    }.stroke(Color.white, style: StrokeStyle(lineWidth: 2, lineCap:.round))
+                                )
                             }
                         }
                     }
