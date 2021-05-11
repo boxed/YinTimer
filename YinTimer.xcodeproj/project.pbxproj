@@ -13,6 +13,7 @@
 		AE50272424BA50300004F11A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE50272324BA50300004F11A /* Preview Assets.xcassets */; };
 		AE50272F24BA50310004F11A /* YinTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50272E24BA50310004F11A /* YinTimerTests.swift */; };
 		AE50273A24BA50310004F11A /* YinTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE50273924BA50310004F11A /* YinTimerUITests.swift */; };
+		AED4903826442841001FFB51 /* default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AED4903726442841001FFB51 /* default.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		AE50273524BA50310004F11A /* YinTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YinTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE50273924BA50310004F11A /* YinTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinTimerUITests.swift; sourceTree = "<group>"; };
 		AE50273B24BA50310004F11A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AED4903726442841001FFB51 /* default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = default.mp3; sourceTree = "<group>"; };
 		AEFC648B25693E32000C003F /* YinTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YinTimer.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 				AE50271E24BA502D0004F11A /* ContentView.swift */,
 				AE50272024BA50300004F11A /* Assets.xcassets */,
 				AE50272524BA50300004F11A /* Info.plist */,
+				AED4903726442841001FFB51 /* default.mp3 */,
 				AE50272224BA50300004F11A /* Preview Content */,
 			);
 			path = YinTimer;
@@ -237,6 +240,7 @@
 			files = (
 				AE50272424BA50300004F11A /* Preview Assets.xcassets in Resources */,
 				AE50272124BA50300004F11A /* Assets.xcassets in Resources */,
+				AED4903826442841001FFB51 /* default.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +425,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = YinTimer/YinTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"YinTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = B6FVY827P9;
 				ENABLE_PREVIEWS = YES;
@@ -431,7 +435,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -446,7 +450,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = YinTimer/YinTimer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"YinTimer/Preview Content\"";
 				DEVELOPMENT_TEAM = B6FVY827P9;
 				ENABLE_PREVIEWS = YES;
@@ -456,7 +460,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 4;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.YinTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

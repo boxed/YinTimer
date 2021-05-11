@@ -72,6 +72,9 @@ func readSongs() -> [[Song]] {
 
             You can also add several rows of song buttons by creating directories with songs in them. The rules in these directories are the same as described above. The names of the directories can be anything but are sorted alphabetically and these lists come after the primary list of files directly in the YinTimer directory.
             """.data(using: .utf8), attributes: nil)
+            let foo = Bundle.main.url(forResource:"default", withExtension:"mp3")!
+            let bar = try Data(contentsOf:foo)
+            fm.createFile(atPath: driveURL.appendingPathComponent("00 🧘‍♀️ default yintimer.mp3").path, contents:bar)
         }
         
         let subdirectory_songs = try FileManager.default.contentsOfDirectory(at: driveURL, includingPropertiesForKeys: [.isDirectoryKey], options: [.skipsHiddenFiles, .skipsSubdirectoryDescendants]).sorted(by: {a, b in a.path < b.path }).map { url -> [Song]? in
@@ -146,8 +149,17 @@ struct ContentView: View {
     
     var settings: some View {
         HStack {
-            Spacer().frame(maxWidth: .infinity)
             if showSettings {
+                VStack {
+                    Text("""
+    You can add your own songs to YinTimer via the Files app.
+    
+    Read more on how to do that in the "How to add files" file in the YinTimer folder:
+    """)
+                    Link("Open Files", destination: URL.init(string:"shareddocuments://YinTimer")!)
+                    Spacer()
+                }.frame(width: 250).padding()
+                Spacer().frame(maxWidth: .infinity)
                 ScrollView(.vertical, showsIndicators: true) {
                     VStack {
                         ForEach(choices, id: \.self) { choice in
